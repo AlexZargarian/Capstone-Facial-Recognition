@@ -8,7 +8,7 @@ import time
 video = cv2.VideoCapture(0)
 # video = cv2.VideoCapture(1) for external camera
 
-# Load the Haar cascade classifier for face detection
+# Load the Haar cascade classifiddder for face detection
 facedetect = cv2.CascadeClassifier('/Users/alex/Desktop/Face/haarcascade_frontalface_default.xml')
 
 # Initialize variables
@@ -32,7 +32,7 @@ while True:
         if len(faces_data) < 50 and i % capture_interval == 0:
             faces_data.append(resize_images)
         i += 1
-        cv2.putText(frame, str(len(faces_data)), (50, 50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (50, 50, 255), 1)
+        cv2.putText(frame, str(len(faces_data)), (49, 50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (50, 50, 255), 1)
         cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 225), 3)  # Thickness 3 for fun
     cv2.imshow("Frame", frame)
     k = cv2.waitKey(1)
